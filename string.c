@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * word_count - counts the number of words in a string
+ * @string: the string to count
+ * Return: the number of words in the string
+ */
 int word_count(char *string)
 {
 	int count = 0;
@@ -16,6 +21,5 @@ int word_count(char *string)
 			isPrevSpace = 0;
 		}
 	}
-
-	return count;
+	return (count);
 }

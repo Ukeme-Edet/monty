@@ -1,9 +1,9 @@
 #include "monty.h"
 
-/*
- * main - entry point for monty interpreter
- * @argc: number of arguments
- * @argv: array of arguments
+/**
+ * main - The programs main entrypoint
+ * @argc: The number of arguments passed to the program
+ * @argv: The arguments passed to the program
  * Return: 0 on success, 1 on failure
  */
 int main(int argc, char *argv[])

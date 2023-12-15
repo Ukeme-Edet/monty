@@ -1,10 +1,14 @@
 #include "monty.h"
-char **monty_tokens;
 
+/**
+ * initialise_stack - initialises a stack
+ * Return: pointer to stack
+ */
 stack_t *initialise_stack(void)
 {
 	stack_t *head = malloc(sizeof(stack_t));
 	stack_t *tail = malloc(sizeof(stack_t));
+
 	if (head == NULL || tail == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -15,9 +19,16 @@ stack_t *initialise_stack(void)
 	return (head);
 }
 
-void stack_push(stack_t **stack, unsigned int __attribute__((unused)) line_number)
+/**
+ * word_count - counts the number of words in a string
+ * @stack: pointer to stack
+ * @line_number: line number
+ */
+void stack_push(stack_t **stack,
+				unsigned int line_number)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
+
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -30,9 +41,16 @@ void stack_push(stack_t **stack, unsigned int __attribute__((unused)) line_numbe
 	(*stack)->next = new_node;
 }
 
-void stack_pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
+/**
+ * stack_pall - prints all values on the stack
+ * @stack: pointer to stack
+ * @line_number: line number
+ */
+void stack_pall(stack_t **stack,
+				unsigned int line_number)
 {
 	stack_t *current = (*stack)->next;
+
 	while (current->next != NULL)
 	{
 		printf("%d\n", current->n);
