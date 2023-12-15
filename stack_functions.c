@@ -34,7 +34,8 @@ void stack_push(stack_t **stack,
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	new_node->n = atoi(monty_tokens[1]);
+	/*new_node->n = atoi(monty_tokens[1]);*/
+	printf("%d\n", line_number);
 	new_node->next = (*stack)->next;
 	(*stack)->next->prev = new_node;
 	new_node->prev = (*stack);
@@ -56,4 +57,5 @@ void stack_pall(stack_t **stack,
 		printf("%d\n", current->n);
 		current = current->next;
 	}
+	printf("%d\n", line_number);
 }
